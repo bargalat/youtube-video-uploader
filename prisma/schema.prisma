@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model channel {
+  id                    Int      @id @default(autoincrement())
+  channel_name          String
+  description           String
+  source                String
+  file_path             String
+  youtube_client_ID     String
+  youtube_client_secret String
+  youtube_redirect_URI  String
+  status                Boolean  @default(true)
+  api_key               String
+  refresh_token         String
+  created_at            DateTime @default(now())
+}

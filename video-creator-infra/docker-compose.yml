@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: video-creator-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: fsq993wxc.
+      MYSQL_DATABASE: video-creator
+      MYSQL_USER: app
+      MYSQL_PASSWORD: fsq993wxc.
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  mysql_data:
